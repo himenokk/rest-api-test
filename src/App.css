@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+.employees {
+
+  text-align: left;
+  padding-left: 50px;
+  margin: 30px;
+  width: 200px;
+  border: 1px solid black;
+}
