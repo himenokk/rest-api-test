@@ -1,7 +1,8 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
+import {useEffect} from "react";
+
 import './App.css';
 import { fetchUserAction } from "./actions/fetchUserAction";
+import { deleteUserAction } from "./actions/deleteUserAction";
 import { useDispatch, useSelector } from "react-redux";
 
 function App() {
@@ -14,11 +15,16 @@ const getEmployees = () => {
   dispatch(fetchUserAction());
 };
 
+const deleteUser = (id) => {
+  dispatch(deleteUserAction(id));
+}
 
 
 useEffect(() => {
   getEmployees();
 }, []);
+
+
 
  
   
@@ -52,7 +58,7 @@ useEffect(() => {
         <div key={el.id} className="employees">
         <div>{el.id}</div>
         <div>{el.name}</div>
-        {/* <button onClick={() => handleEmployeeDelete(el.id)}>Delete</button> */}
+        <button onClick={() => deleteUser(el.id)}>Delete</button>
         </div>
       ))}
 

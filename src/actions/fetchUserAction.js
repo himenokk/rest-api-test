@@ -6,7 +6,11 @@ import { FETCH_USER_SUCCESS } from "../types";
         await fetchUserApi().then((response) => {
             dispatch({
                 type: FETCH_USER_SUCCESS,
-                payload: response.data,
+                payload: response,
             });
         });
     };
+
+
+    
+    
